@@ -79,6 +79,8 @@ WORKDIR $PROJECT_PATH
 
 # Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+# Downgrade composer for compatibility
+RUN composer self-update --1
 
 # Start apache
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
