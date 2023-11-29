@@ -72,7 +72,7 @@ RUN apt purge -yq \
 COPY config/apache-virtualhost.conf /etc/apache2/sites-available/000-default.conf
 
 # Port to expose
-EXPOSE 80 443
+EXPOSE 8080 443
 
 # Workdir
 WORKDIR $PROJECT_PATH
